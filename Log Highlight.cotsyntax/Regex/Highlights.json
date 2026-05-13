@@ -1,0 +1,167 @@
+{
+  "attributes" : [
+    {
+      "begin" : "\\S+Id",
+      "end" : "(?=[=: ])",
+      "regularExpression" : true
+    },
+    {
+      "begin" : "\\S+Type",
+      "end" : "(?=[=: ])",
+      "regularExpression" : true
+    },
+    {
+      "begin" : "agent"
+    },
+    {
+      "begin" : "branch"
+    },
+    {
+      "begin" : "build id"
+    },
+    {
+      "begin" : "checkout rules"
+    },
+    {
+      "begin" : "core.askpass"
+    },
+    {
+      "begin" : "credential.helper"
+    },
+    {
+      "begin" : "description"
+    },
+    {
+      "begin" : "host"
+    },
+    {
+      "begin" : "id"
+    },
+    {
+      "begin" : "instance id"
+    },
+    {
+      "begin" : "parent id"
+    },
+    {
+      "begin" : "parent internal id"
+    },
+    {
+      "begin" : "pool"
+    },
+    {
+      "begin" : "version"
+    }
+  ],
+  "characters" : [
+    {
+      "begin" : "-\\s+([\\w.$]+)\\s+-",
+      "regularExpression" : true
+    }
+  ],
+  "commands" : [
+    {
+      "begin" : "^\\[\\d{2}:\\d{2}:\\d{2}\\]W:",
+      "description" : "WARN",
+      "regularExpression" : true
+    },
+    {
+      "begin" : "^\\[\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2},\\d{3}\\]\\s+?WARN",
+      "description" : "WARN",
+      "regularExpression" : true
+    },
+    {
+      "begin" : "^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2},\\d{3}\\s\\[\\s*\\d+\\]\\s+?WARN",
+      "description" : "WARN",
+      "regularExpression" : true
+    }
+  ],
+  "keywords" : [
+    {
+      "begin" : "^\\[\\d{2}:\\d{2}:\\d{2}\\][i ]:",
+      "description" : "INFO messages build logs",
+      "regularExpression" : true
+    },
+    {
+      "begin" : "^\\[\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2},\\d{3}\\]\\s+?INFO",
+      "description" : "INFO messages",
+      "regularExpression" : true
+    },
+    {
+      "begin" : "^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2},\\d{3}\\s\\[\\s*\\d+\\]\\s+?INFO",
+      "description" : "INFO messages",
+      "regularExpression" : true
+    }
+  ],
+  "numbers" : [
+    {
+      "begin" : "(?<==)\\w+",
+      "description" : "Regular values",
+      "end" : "(?=[,;)} ])",
+      "regularExpression" : true
+    },
+    {
+      "begin" : "(?<=\\D:)\\d+",
+      "end" : "[,;)} ]",
+      "regularExpression" : true
+    },
+    {
+      "begin" : "(false\\False|FALSE)",
+      "description" : "False values",
+      "end" : "[,;)} ]",
+      "regularExpression" : true
+    },
+    {
+      "begin" : "(null|Null|NULL)",
+      "description" : "Null values",
+      "end" : "[,;)} ]",
+      "regularExpression" : true
+    },
+    {
+      "begin" : "(true|True|TRUE)",
+      "description" : "True values",
+      "end" : "[,;)} ]",
+      "regularExpression" : true
+    }
+  ],
+  "strings" : [
+    {
+      "begin" : "\"",
+      "end" : "\""
+    },
+    {
+      "begin" : "'",
+      "end" : "'"
+    }
+  ],
+  "values" : [
+    {
+      "begin" : "\\[\\d{2}:\\d{2}:\\d{2}\\]E:",
+      "description" : "ERROR",
+      "regularExpression" : true
+    },
+    {
+      "begin" : "\\b[a-zA-Z_$][\\w$]*(?:\\.[a-zA-Z_$][\\w$]*)+\\b",
+      "description" : "Java Class/Method names",
+      "regularExpression" : true
+    },
+    {
+      "begin" : "\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2},\\d{3}\\s\\[\\s*\\d+\\]\\s+?ERROR",
+      "description" : "ERROR",
+      "regularExpression" : true
+    },
+    {
+      "begin" : "^\\[\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2},\\d{3}\\]\\s+?ERROR",
+      "description" : "ERROR",
+      "regularExpression" : true
+    }
+  ],
+  "variables" : [
+    {
+      "begin" : "\\[\\D",
+      "description" : "Thread/Process names",
+      "end" : "\\]",
+      "regularExpression" : true
+    }
+  ]
+}
